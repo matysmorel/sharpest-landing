@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHARPEST — Brand Memo</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600;700&display=swap');
+
+  :root {
+    --black: #0A0A0A;
+    --white: #F5F5F0;
+    --yellow: #FFE500;
+    --gray: #C8C8C0;
+    --mid: #3A3A3A;
+    --border: 2px solid var(--black);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--white);
+    color: var(--black);
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* HEADER */
+  .header {
+    border-bottom: var(--border);
+    padding: 40px 60px 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: end;
+  }
+
+  .header-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    letter-spacing: 4px;
+    line-height: 1;
+    background: var(--yellow);
+    display: inline-block;
+    padding: 8px 20px 4px;
+    border: var(--border);
+  }
+
+  .header-meta {
+    text-align: right;
+  }
+
+  .header-meta .label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--mid);
+    margin-bottom: 4px;
+  }
+
+  .header-meta .value {
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  /* LAYOUT */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px;
+  }
+
+  /* SECTION */
+  .section {
+    margin-bottom: 60px;
+    border: var(--border);
+  }
+
+  .section-header {
+    background: var(--black);
+    color: var(--white);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-number {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--yellow);
+    letter-spacing: 2px;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 3px;
+  }
+
+  .section-body {
+    padding: 32px;
+  }
+
+  /* STORY BOX */
+  .story-box {
+    background: var(--yellow);
+    border: var(--border);
+    padding: 28px 32px;
+    margin-bottom: 24px;
+  }
+
+  .story-box p {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  .story-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+    color: var(--mid);
+  }
+
+  /* GRID */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+  }
+
+  .grid-item {
+    border: var(--border);
+    padding: 24px;
+    margin: -1px -1px 0 0;
+  }
+
+  .grid-item-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+
+  .grid-item-value {
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .grid-item-sub {
+    font-size: 13px;
+    color: var(--mid);
+    margin-top: 4px;
+    line-height: 1.5;
+  }
+
+  /* COLOR SWATCHES */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: var(--border);
+  }
+
+  .swatch {
+    padding: 0;
+  }
+
+  .swatch-color {
+    height: 100px;
+    border-bottom: var(--border);
+  }
+
+  .swatch-info {
+    padding: 16px;
+  }
+
+  .swatch-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+  }
+
+  .swatch-hex {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--mid);
+  }
+
+  .swatch-desc {
+    font-size: 12px;
+    color: var(--mid);
+    margin-top: 4px;
+  }
+
+  /* TYPOGRAPHY DEMO */
+  .type-demo {
+    border: var(--border);
+    margin-bottom: 16px;
+  }
+
+  .type-demo-label {
+    background: var(--black);
+    color: var(--yellow);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+  }
+
+  .type-demo-content {
+    padding: 24px;
+  }
+
+  /* DO/DON'T */
+  .do-dont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: var(--border);
+  }
+
+  .do-box {
+    padding: 24px;
+    border-right: var(--border);
+  }
+
+  .dont-box {
+    padding: 24px;
+  }
+
+  .do-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .do-label .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #00C851;
+    flex-shrink: 0;
+  }
+
+  .dont-label .dot {
+    background: #FF4444;
+  }
+
+  .do-list {
+    list-style: none;
+  }
+
+  .do-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--gray);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .do-list li:last-child {
+    border-bottom: none;
+  }
+
+  /* PRODUCT TABLE */
+  .product-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: var(--border);
+  }
+
+  .product-table th {
+    background: var(--black);
+    color: var(--white);
+    padding: 12px 20px;
+    text-align: left;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .product-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--gray);
+    font-size: 13px;
+    vertical-align: top;
+  }
+
+  .product-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .product-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .product-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    background: var(--yellow);
+    border: 1px solid var(--black);
+    padding: 2px 8px;
+    display: inline-block;
+  }
+
+  /* TAGLINES */
+  .tagline-block {
+    border: var(--border);
+    padding: 24px 32px;
+    margin-bottom: 12px;
+  }
+
+  .tagline-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: 3px;
+    line-height: 1.2;
+  }
+
+  .tagline-note {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--mid);
+    margin-top: 8px;
+    letter-spacing: 1px;
+  }
+
+  /* MOCKUP WEB */
+  .web-mockup {
+    border: var(--border);
+    overflow: hidden;
+  }
+
+  .web-nav {
+    background: var(--black);
+    padding: 14px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .web-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: var(--white);
+    letter-spacing: 4px;
+  }
+
+  .web-nav-links {
+    display: flex;
+    gap: 24px;
+  }
+
+  .web-nav-links span {
+    color: var(--gray);
+    font-size: 12px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 1px;
+  }
+
+  .web-hero {
+    padding: 80px 60px;
+    background: var(--white);
+    border-top: var(--border);
+  }
+
+  .web-hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 20px;
+  }
+
+  .web-hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 72px;
+    letter-spacing: 4px;
+    line-height: 1;
+    margin-bottom: 24px;
+  }
+
+  .web-hero-title span {
+    background: var(--yellow);
+    padding: 0 8px;
+  }
+
+  .web-hero-sub {
+    font-size: 16px;
+    color: var(--mid);
+    max-width: 440px;
+    line-height: 1.6;
+    margin-bottom: 36px;
+  }
+
+  .web-cta {
+    display: inline-block;
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border: var(--border);
+  }
+
+  .web-cta-ghost {
+    display: inline-block;
+    background: transparent;
+    color: var(--black);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border: var(--border);
+    margin-left: 12px;
+  }
+
+  /* LOGO VARIATIONS */
+  .logo-variations {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: var(--border);
+  }
+
+  .logo-var {
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: var(--border);
+    border-bottom: var(--border);
+  }
+
+  .logo-var:nth-child(even) { border-right: none; }
+  .logo-var:nth-child(3), .logo-var:nth-child(4) { border-bottom: none; }
+
+  .logo-var-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--mid);
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  .logo-var-inner {
+    text-align: center;
+  }
+
+  .logo-primary {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    letter-spacing: 8px;
+    color: var(--black);
+  }
+
+  .logo-on-black {
+    background: var(--black);
+    padding: 16px 24px;
+  }
+
+  .logo-on-black .logo-primary { color: var(--white); }
+
+  .logo-on-yellow {
+    background: var(--yellow);
+    padding: 16px 24px;
+    border: var(--border);
+  }
+
+  .logo-small {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 6px;
+  }
+
+  /* RULE */
+  .rule {
+    border: none;
+    border-top: var(--border);
+    margin: 0;
+  }
+
+  /* INTRO TEXT */
+  .intro {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--mid);
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--gray);
+  }
+
+  p { margin-bottom: 12px; }
+  p:last-child { margin-bottom: 0; }
+
+  strong { color: var(--black); }
+
+  /* FOOTER */
+  .footer {
+    border-top: var(--border);
+    padding: 32px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--black);
+    color: var(--white);
+  }
+
+  .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 6px;
+    color: var(--yellow);
+  }
+
+  .footer-note {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--gray);
+    letter-spacing: 1px;
+  }
+
+  .highlight {
+    background: var(--yellow);
+    padding: 0 4px;
+  }
+
+  .mono {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div>
+    <div class="header-brand">SHARPEST</div>
+  </div>
+  <div class="header-meta">
+    <div class="label">Document type</div>
+    <div class="value" style="margin-bottom:16px;">Brand Identity Memo</div>
+    <div class="label">Prepared for</div>
+    <div class="value" style="margin-bottom:16px;">Graphic Designer</div>
+    <div class="label">Version</div>
+    <div class="value">1.0 — 2026</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- INTRO -->
+  <p class="intro">
+    This memo outlines the complete brand identity for <strong>SHARPEST</strong> — an AI automation agency built on a single philosophy: <strong>no fluff, just results.</strong> Use this document as your primary reference for all design decisions. When in doubt, ask yourself: is this sharp enough?
+  </p>
+
+  <!-- SECTION 1: ORIGIN -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">01</span>
+      <span class="section-title">Origin & Story</span>
+    </div>
+    <div class="section-body">
+      <div class="story-box">
+        <div class="story-label">The story</div>
+        <p>"A friend always said about people who weren't quite getting it — 'he's not the sharpest pencil in the box.' We built AI agents that are."</p>
+      </div>
+      <p>SHARPEST is a Czech-founded AI automation agency. The name comes from a well-known saying about intelligence and wit — turned into a mission. We are the sharpest tool in your business. The brand should feel like it was built by someone who has been inside broken systems, seen the inefficiency up close, and decided to fix it. No drama. Just work.</p>
+      <p>The founder is a lawyer who thinks like an engineer. That combination — precision + systems thinking — should be visible in every brand touchpoint.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 2: POSITIONING -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">02</span>
+      <span class="section-title">Positioning & Personality</span>
+    </div>
+    <div class="section-body">
+      <div class="grid-2">
+        <div class="grid-item">
+          <div class="grid-item-label">Core positioning</div>
+          <div class="grid-item-value">AI agents for businesses that hate wasted time.</div>
+        </div>
+        <div class="grid-item">
+          <div class="grid-item-label">Primary tagline</div>
+          <div class="grid-item-value">No fluff. Just results.</div>
+        </div>
+        <div class="grid-item">
+          <div class="grid-item-label">Personality</div>
+          <div class="grid-item-value">Sharp. Direct. Confident.</div>
+          <div class="grid-item-sub">With a dry Central European sense of humour. Never arrogant — earned confidence.</div>
+        </div>
+        <div class="grid-item">
+          <div class="grid-item-label">Anti-positioning</div>
+          <div class="grid-item-value">We are not "revolutionary".</div>
+          <div class="grid-item-sub">We don't use hype words. We don't overpromise. We let results speak.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: VISUAL IDENTITY -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">03</span>
+      <span class="section-title">Visual Direction — Neo Brutalism</span>
+    </div>
+    <div class="section-body">
+      <p style="margin-bottom:24px;">The visual style is <strong>neo brutalism</strong> — raw, intentional, high contrast. No rounded corners. No gradients. No shadows. No stock photography. Everything is deliberate. The design should feel like it was built by someone who cares deeply about precision and has zero patience for decoration that doesn't serve a purpose.</p>
+
+      <div class="grid-3" style="margin-bottom:32px;">
+        <div class="grid-item">
+          <div class="grid-item-label">Grid</div>
+          <div class="grid-item-value">Strict. Rigid.</div>
+          <div class="grid-item-sub">Everything aligned. No floating elements.</div>
+        </div>
+        <div class="grid-item">
+          <div class="grid-item-label">Borders</div>
+          <div class="grid-item-value">2px solid black.</div>
+          <div class="grid-item-sub">Sharp edges everywhere. No border-radius.</div>
+        </div>
+        <div class="grid-item">
+          <div class="grid-item-label">Whitespace</div>
+          <div class="grid-item-value">Generous but precise.</div>
+          <div class="grid-item-sub">Breathing room that feels intentional, not lazy.</div>
+        </div>
+      </div>
+
+      <p>References: Linear.app, Vercel, early Figma, Gumroad redesign. But colder. More Central European. Less Silicon Valley.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 4: LOGO -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">04</span>
+      <span class="section-title">Logo</span>
+    </div>
+    <div class="section-body">
+      <p style="margin-bottom:24px;">The logo is purely typographic. <strong>No icon. No pencil. No abstract mark.</strong> The word SHARPEST is the logo. Set in a bold geometric sans-serif or display typeface. Always uppercase. The name is strong enough to stand alone.</p>
+
+      <div class="logo-variations" style="margin-bottom:24px;">
+        <div class="logo-var">
+          <div class="logo-var-inner">
+            <div class="logo-primary">SHARPEST</div>
+            <div class="logo-var-label">Primary — on white</div>
+          </div>
+        </div>
+        <div class="logo-var" style="background:#0A0A0A;">
+          <div class="logo-var-inner">
+            <div class="logo-on-black">
+              <div class="logo-primary">SHARPEST</div>
+            </div>
+            <div class="logo-var-label" style="color:#666;">Reversed — on black</div>
+          </div>
+        </div>
+        <div class="logo-var">
+          <div class="logo-var-inner">
+            <div class="logo-on-yellow">
+              <div class="logo-primary">SHARPEST</div>
+            </div>
+            <div class="logo-var-label">Accent — on yellow</div>
+          </div>
+        </div>
+        <div class="logo-var">
+          <div class="logo-var-inner">
+            <div class="logo-small">SHARPEST LABS</div>
+            <div class="logo-var-label">With descriptor</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="do-dont">
+        <div class="do-box">
+          <div class="do-label"><span class="dot"></span> DO</div>
+          <ul class="do-list">
+            <li>Always uppercase</li>
+            <li>Use only approved color combinations</li>
+            <li>Maintain generous letter-spacing</li>
+            <li>Keep clear space around the logo</li>
+            <li>"LABS" can appear smaller beneath or beside as descriptor</li>
+          </ul>
+        </div>
+        <div class="dont-box">
+          <div class="do-label dont-label"><span class="dot"></span> DON'T</div>
+          <ul class="do-list">
+            <li>Never use lowercase</li>
+            <li>Never add a pencil icon or any illustration</li>
+            <li>Never use gradients on the logo</li>
+            <li>Never stretch or distort</li>
+            <li>Never place on busy backgrounds</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 5: COLORS -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">05</span>
+      <span class="section-title">Color System</span>
+    </div>
+    <div class="section-body">
+      <div class="color-grid" style="margin-bottom:24px;">
+        <div class="swatch">
+          <div class="swatch-color" style="background:#0A0A0A;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">BLACK</div>
+            <div class="swatch-hex">#0A0A0A</div>
+            <div class="swatch-desc">Primary. Dominant. Use for text, borders, backgrounds.</div>
+          </div>
+        </div>
+        <div class="swatch" style="border-left: var(--border);">
+          <div class="swatch-color" style="background:#F5F5F0; border-bottom: var(--border);"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">OFF-WHITE</div>
+            <div class="swatch-hex">#F5F5F0</div>
+            <div class="swatch-desc">Primary background. Warmer than pure white — more human.</div>
+          </div>
+        </div>
+        <div class="swatch" style="border-left: var(--border);">
+          <div class="swatch-color" style="background:#FFE500; border-bottom: var(--border);"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">ELECTRIC YELLOW</div>
+            <div class="swatch-hex">#FFE500</div>
+            <div class="swatch-desc">The sharp accent. Sparingly. Highlights, CTAs, key moments.</div>
+          </div>
+        </div>
+        <div class="swatch" style="border-left: var(--border);">
+          <div class="swatch-color" style="background:#C8C8C0; border-bottom: var(--border);"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">MID GRAY</div>
+            <div class="swatch-hex">#C8C8C0</div>
+            <div class="swatch-desc">Secondary text, dividers, supporting elements.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="do-dont">
+        <div class="do-box">
+          <div class="do-label"><span class="dot"></span> USE YELLOW FOR</div>
+          <ul class="do-list">
+            <li>Primary CTA buttons</li>
+            <li>Key highlights and pull quotes</li>
+            <li>Logo lockup on dark backgrounds</li>
+            <li>Section accents — one per composition</li>
+          </ul>
+        </div>
+        <div class="dont-box">
+          <div class="do-label dont-label"><span class="dot"></span> NEVER USE</div>
+          <ul class="do-list">
+            <li>Blue — too corporate, too generic AI</li>
+            <li>Purple — startup cliché</li>
+            <li>Gradients of any kind</li>
+            <li>More than 3 colors in one layout</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 6: TYPOGRAPHY -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">06</span>
+      <span class="section-title">Typography</span>
+    </div>
+    <div class="section-body">
+      <div class="grid-3" style="margin-bottom:32px;">
+        <div class="grid-item">
+          <div class="grid-item-label">Display / Headlines</div>
+          <div class="grid-item-value">Bebas Neue</div>
+          <div class="grid-item-sub">All caps. Used for big statements, hero text, product names, section headers.</div>
+        </div>
+        <div class="grid-item">
+          <div class="grid-item-label">Body / UI</div>
+          <div class="grid-item-value">Instrument Sans</div>
+          <div class="grid-item-sub">Body copy, descriptions, navigation, long-form content.</div>
+        </div>
+        <div class="grid-item">
+          <div class="grid-item-label">Labels / Code</div>
+          <div class="grid-item-value">DM Mono</div>
+          <div class="grid-item-sub">Tags, metadata, technical labels, timestamps, captions.</div>
+        </div>
+      </div>
+
+      <div class="type-demo">
+        <div class="type-demo-label">Display — Hero headline</div>
+        <div class="type-demo-content">
+          <div style="font-family:'Bebas Neue',sans-serif; font-size:52px; letter-spacing:4px; line-height:1.1;">AI AGENTS THAT<br>ACTUALLY WORK.</div>
+        </div>
+      </div>
+
+      <div class="type-demo">
+        <div class="type-demo-label">Body — Supporting copy</div>
+        <div class="type-demo-content">
+          <div style="font-size:16px; color:#3A3A3A; line-height:1.7; max-width:520px;">We build AI agents that automate the work your team hates doing. No long onboarding. No vague deliverables. Results in 30 days or we don't charge.</div>
+        </div>
+      </div>
+
+      <div class="type-demo">
+        <div class="type-demo-label">Mono — Labels & metadata</div>
+        <div class="type-demo-content">
+          <div style="font-family:'DM Mono',monospace; font-size:12px; letter-spacing:3px; text-transform:uppercase; color:#3A3A3A;">PRODUCT — SHARPEST EDGE — AUDIT</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 7: VOICE & TONE -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">07</span>
+      <span class="section-title">Voice & Tone</span>
+    </div>
+    <div class="section-body">
+      <div class="do-dont" style="margin-bottom:24px;">
+        <div class="do-box">
+          <div class="do-label"><span class="dot"></span> WE WRITE LIKE THIS</div>
+          <ul class="do-list">
+            <li><strong>Short sentences. No filler.</strong> Every word earns its place.</li>
+            <li><strong>"We automate the work you hate."</strong> Direct. Personal.</li>
+            <li><strong>"Results in 30 days."</strong> Specific. Measurable.</li>
+            <li><strong>"Sharp. Fast. Done."</strong> Rhythm matters.</li>
+            <li>Dry humour when appropriate. Never forced.</li>
+          </ul>
+        </div>
+        <div class="dont-box">
+          <div class="do-label dont-label"><span class="dot"></span> WE NEVER WRITE</div>
+          <ul class="do-list">
+            <li>"Revolutionary AI-powered solutions"</li>
+            <li>"We leverage cutting-edge technology to..."</li>
+            <li>"Game-changing" / "World-class" / "Best-in-class"</li>
+            <li>Passive voice</li>
+            <li>Long paragraphs that could be one sentence</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tagline-block">
+        <div class="tagline-text">NO FLUFF. JUST RESULTS.</div>
+        <div class="tagline-note">Primary tagline — use across all touchpoints</div>
+      </div>
+      <div class="tagline-block">
+        <div class="tagline-text">SHARP. FAST. DONE.</div>
+        <div class="tagline-note">Secondary tagline — use for product-level communication</div>
+      </div>
+      <div class="tagline-block">
+        <div class="tagline-text">AI AGENTS THAT ACTUALLY WORK.</div>
+        <div class="tagline-note">Hero headline — use on website and presentations</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 8: PRODUCTS -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">08</span>
+      <span class="section-title">Product Line</span>
+    </div>
+    <div class="section-body">
+      <p style="margin-bottom:24px;">Each product name follows the same pattern: <span class="highlight"><strong>SHARPEST [WORD]</strong></span> — where the second word is a sharp, single-syllable English noun. Always uppercase. Always feels like action.</p>
+
+      <table class="product-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>What it is</th>
+            <th>One-liner</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <span class="product-name">SHARPEST EDGE</span>
+              <span class="product-tag">Entry</span>
+            </td>
+            <td style="font-size:13px;">AI audit — we map where you're losing time and money</td>
+            <td style="font-size:13px; font-style:italic; color:#3A3A3A;">"Find where you're bleeding."</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="product-name">SHARPEST CUT</span>
+              <span class="product-tag">Implementation</span>
+            </td>
+            <td style="font-size:13px;">First AI agent deployed — one process, immediate results</td>
+            <td style="font-size:13px; font-style:italic; color:#3A3A3A;">"One cut. Immediate results."</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="product-name">SHARPEST CORE</span>
+              <span class="product-tag">Main product</span>
+            </td>
+            <td style="font-size:13px;">Full automation of key business processes — monthly retainer</td>
+            <td style="font-size:13px; font-style:italic; color:#3A3A3A;">"The engine of your operations."</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="product-name">SHARPEST STACK</span>
+              <span class="product-tag">Enterprise</span>
+            </td>
+            <td style="font-size:13px;">Complete AI workforce — entire back-office automated</td>
+            <td style="font-size:13px; font-style:italic; color:#3A3A3A;">"Your entire back-office. Automated."</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="product-name">SHARPEST LOOP</span>
+              <span class="product-tag">Ongoing</span>
+            </td>
+            <td style="font-size:13px;">Continuous optimisation — we never stop improving</td>
+            <td style="font-size:13px; font-style:italic; color:#3A3A3A;">"We never stop sharpening."</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SECTION 9: WEB MOCKUP -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">09</span>
+      <span class="section-title">Web Direction — Reference Mockup</span>
+    </div>
+    <div class="section-body">
+      <p style="margin-bottom:24px;">The website should be a single strong statement. No carousels. No hero images. No animations for the sake of animations. The homepage is essentially a billboard — bold type, one CTA, one message.</p>
+
+      <div class="web-mockup">
+        <div class="web-nav">
+          <div class="web-logo">SHARPEST</div>
+          <div class="web-nav-links">
+            <span>PRODUCTS</span>
+            <span>WORK</span>
+            <span>ABOUT</span>
+            <span style="color:#FFE500;">BOOK A CALL →</span>
+          </div>
+        </div>
+        <div class="web-hero">
+          <div class="web-hero-eyebrow">AI Automation Agency — Prague</div>
+          <div class="web-hero-title">AI AGENTS THAT<br><span>ACTUALLY WORK.</span></div>
+          <div class="web-hero-sub">We automate the work your team hates doing. No long onboarding. No vague deliverables. Results in 30 days.</div>
+          <div>
+            <span class="web-cta">BOOK A FREE AUDIT →</span>
+            <span class="web-cta-ghost">SEE RESULTS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-3" style="margin-top:24px;">
+        <div class="grid-item">
+          <div class="grid-item-label">Layout rule</div>
+          <div class="grid-item-value">One column, maximum.</div>
+          <div class="grid-item-sub">Content stacks vertically. No complex multi-column grids on homepage.</div>
+        </div>
+        <div class="grid-item">
+          <div class="grid-item-label">Images</div>
+          <div class="grid-item-value">None, or minimal.</div>
+          <div class="grid-item-sub">No stock photos. No people at computers. Data, numbers, results instead.</div>
+        </div>
+        <div class="grid-item">
+          <div class="grid-item-label">Animation</div>
+          <div class="grid-item-value">Subtle only.</div>
+          <div class="grid-item-sub">Text fade-in on load maximum. No scroll animations, no parallax.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 10: WHAT WE ARE NOT -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">10</span>
+      <span class="section-title">What SHARPEST Is Not</span>
+    </div>
+    <div class="section-body">
+      <p style="margin-bottom:20px;">When in doubt — look at our competitors and do the opposite. Most AI agencies look identical: dark blue or black, hexagon patterns, stock photos of robots, vague promises. SHARPEST is none of that.</p>
+      <div class="grid-2">
+        <div class="grid-item">
+          <div class="grid-item-label">Not this</div>
+          <ul class="do-list" style="margin-top:8px;">
+            <li style="padding:8px 0; border-bottom:1px solid #C8C8C0; font-size:13px;">Rounded corners and friendly gradients</li>
+            <li style="padding:8px 0; border-bottom:1px solid #C8C8C0; font-size:13px;">Blue color palette — "trustworthy tech"</li>
+            <li style="padding:8px 0; border-bottom:1px solid #C8C8C0; font-size:13px;">Abstract robot or AI brain illustrations</li>
+            <li style="padding:8px 0; border-bottom:1px solid #C8C8C0; font-size:13px;">Testimonials with stock headshots</li>
+            <li style="padding:8px 0; font-size:13px;">Inter or Roboto as primary typeface</li>
+          </ul>
+        </div>
+        <div class="grid-item">
+          <div class="grid-item-label">But this</div>
+          <ul class="do-list" style="margin-top:8px;">
+            <li style="padding:8px 0; border-bottom:1px solid #C8C8C0; font-size:13px;">Sharp edges, 2px borders, raw structure</li>
+            <li style="padding:8px 0; border-bottom:1px solid #C8C8C0; font-size:13px;">Black, white, electric yellow — nothing else</li>
+            <li style="padding:8px 0; border-bottom:1px solid #C8C8C0; font-size:13px;">Bold typography as the visual element</li>
+            <li style="padding:8px 0; border-bottom:1px solid #C8C8C0; font-size:13px;">Real numbers, real results, real case studies</li>
+            <li style="padding:8px 0; font-size:13px;">Bebas Neue + Instrument Sans + DM Mono</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-brand">SHARPEST</div>
+  <div class="footer-note">sharpest.agency — Brand Identity Memo v1.0 — Confidential</div>
+</div>
+
+</body>
+</html>
