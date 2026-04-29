@@ -1,8 +1,11 @@
-import Image from 'next/image'
+'use client'
 
-const footerLinks = ['PRODUCTS', 'ABOUT', 'CONTACT']
+import Image from 'next/image'
+import { useLanguage } from '@/context/LanguageContext'
 
 export function Footer() {
+  const { t } = useLanguage()
+
   return (
     <footer className="bg-black border-t-2 border-black">
       <div className="max-w-[1200px] mx-auto px-10 py-10 flex items-center justify-between flex-wrap gap-6">
@@ -14,7 +17,7 @@ export function Footer() {
           className="h-9 w-auto object-contain"
         />
         <div className="flex items-center gap-8">
-          {footerLinks.map(link => (
+          {t.footer.links.map((link: string) => (
             <a
               key={link}
               href={`#${link.toLowerCase()}`}
@@ -28,7 +31,7 @@ export function Footer() {
       <div className="border-t border-mid">
         <div className="max-w-[1200px] mx-auto px-10 py-4">
           <span className="font-mono text-[10px] tracking-[1px] text-mid">
-            sharpest.agency — © 2026 — No fluff. Just results.
+            {t.footer.copy}
           </span>
         </div>
       </div>

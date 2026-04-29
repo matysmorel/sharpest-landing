@@ -1,23 +1,24 @@
 import type { Metadata } from 'next'
 import { Bebas_Neue, Instrument_Sans, DM_Mono } from 'next/font/google'
+import { Providers } from '@/components/Providers'
 import './globals.css'
 
 const bebasNeue = Bebas_Neue({
   weight: '400',
-  subsets: ['latin'],
+  subsets: ['latin', 'latin-ext'],
   variable: '--font-bebas',
   display: 'swap',
 })
 
 const instrumentSans = Instrument_Sans({
-  subsets: ['latin'],
+  subsets: ['latin', 'latin-ext'],
   variable: '--font-instrument',
   display: 'swap',
 })
 
 const dmMono = DM_Mono({
   weight: ['400', '500'],
-  subsets: ['latin'],
+  subsets: ['latin', 'latin-ext'],
   variable: '--font-dm-mono',
   display: 'swap',
 })
@@ -47,7 +48,9 @@ export default function RootLayout({
       lang="en"
       className={`${bebasNeue.variable} ${instrumentSans.variable} ${dmMono.variable}`}
     >
-      <body className="bg-white text-black font-body">{children}</body>
+      <body className="bg-white text-black font-body">
+        <Providers>{children}</Providers>
+      </body>
     </html>
   )
 }
