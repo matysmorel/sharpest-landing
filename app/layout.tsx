@@ -25,6 +25,11 @@ const dmMono = DM_Mono({
 export const metadata: Metadata = {
   title: 'SHARPEST — AI Agents That Actually Work.',
   description: 'We automate the work your team hates doing. No long onboarding. No vague deliverables. Results in 30 days.',
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/icon.png',
+    apple: '/icon.png',
+  },
   openGraph: {
     title: 'SHARPEST — No Fluff. Just Results.',
     description: 'AI automation agency based in Prague. AI agents for businesses that hate wasted time.',

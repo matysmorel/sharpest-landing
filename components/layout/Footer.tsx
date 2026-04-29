@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="bg-black border-t-2 border-black">
       <div className="max-w-[1200px] mx-auto px-10 py-10 flex items-center justify-between flex-wrap gap-6">
         <Image
-          src="/logo.jpeg"
+          src="/logo-white.png"
           alt="SHARPEST"
           width={160}
           height={40}

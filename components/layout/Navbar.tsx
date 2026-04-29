@@ -5,10 +5,10 @@ const navLinks = ['PRODUCTS', 'WORK', 'ABOUT']
 
 export function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 bg-black border-b-2 border-black h-[60px] flex items-center justify-between px-10">
+    <nav className="sticky top-0 z-50 bg-white border-b-4 border-black h-[80px] flex items-center justify-between px-16">
       <a href="#" className="flex items-center">
         <Image
-          src="/logo.jpeg"
+          src="/logo.png"
           alt="SHARPEST"
           width={140}
           height={36}
@@ -21,7 +21,7 @@ export function Navbar() {
           <a
             key={link}
             href={`#${link.toLowerCase()}`}
-            className="font-mono text-gray text-[11px] tracking-[2px] hover:text-white transition-colors duration-150 hidden md:block"
+            className="font-mono text-mid text-[11px] tracking-[2px] hover:text-black transition-colors duration-150 hidden md:block"
           >
             {link}
           </a>
